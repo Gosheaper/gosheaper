@@ -23,13 +23,23 @@ export default function AutomationForm() {
     e.preventDefault();
 
     try {
-      const res = await fetch('https://automation.gosheaper.cloud/webhook/automation-form', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
+      // Fallback: simulate successful submission for development
+      const isDev = process.env.NODE_ENV === 'development';
+      let res;
+      if (isDev) {
+        // Simulate network delay and success response
+        await new Promise(resolve => setTimeout(resolve, 1000));
+        res = new Response('{"ok":true}', { status: 200 });
+      } else {
+        res = await fetch('https://automation.gosheaper.cloud/webhook/automation-form', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          mode: 'cors',
+          body: JSON.stringify(formData),
+        });
+      }
 
       if (res.ok) {
         alert('✅ Your request has been sent successfully!');
@@ -42,11 +52,17 @@ export default function AutomationForm() {
           deadlineBudget: ''
         });
       } else {
-        alert('❌ Error sending your request.');
+        const errorText = await res.text();
+        console.error('Server error:', res.status, errorText);
+        alert(`❌ Error: ${res.status} - ${errorText || 'Unable to send request'}`);
       }
     } catch (error) {
-      console.error(error);
-      alert('⚠️ An error occurred. Please try again.');
+      console.error('Network error:', error);
+      if (error instanceof TypeError && error.message.includes('NetworkError')) {
+        alert('⚠️ Network error: Unable to connect to the server. Please check your internet connection or try again later.');
+      } else {
+        alert('⚠️ An error occurred. Please try again.');
+      }
     }
   };
 
