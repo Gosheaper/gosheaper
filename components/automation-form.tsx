@@ -23,7 +23,7 @@ export default function AutomationForm() {
     e.preventDefault();
 
     try {
-      const res = await fetch('https://automation.gosheaper.cloud/webhook/webhook/automation-form', {
+      const res = await fetch('https://automation.gosheaper.cloud/webhook/automation-form', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
