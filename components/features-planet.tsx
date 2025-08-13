@@ -46,7 +46,7 @@ export default function FeaturesPlanet() {
                     Get Free Quote
                   </h3>
                   <p className="text-gray-600">
-                    Receive a custom automation proposal within 48 hours
+                    Receive a custom automation proposal quickly
                   </p>
                 </div>
                 <div className="hidden sm:block absolute left-6 top-12 w-0.5 h-16 bg-blue-200"></div>
