@@ -19,10 +19,35 @@ export default function AutomationForm() {
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission here
-    console.log('Form submitted:', formData);
+
+    try {
+      const res = await fetch('https://automation.gosheaper.cloud/webhook/webhook/automation-form', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (res.ok) {
+        alert('✅ Your request has been sent successfully!');
+        setFormData({
+          name: '',
+          email: '',
+          automationType: '',
+          projectDescription: '',
+          expectedResults: '',
+          deadlineBudget: ''
+        });
+      } else {
+        alert('❌ Error sending your request.');
+      }
+    } catch (error) {
+      console.error(error);
+      alert('⚠️ An error occurred. Please try again.');
+    }
   };
 
   const automationTypes = [
