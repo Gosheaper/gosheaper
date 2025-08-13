@@ -80,9 +80,12 @@ export default function FeaturesPlanet() {
               <p className="text-gray-600 mb-6">
                 Join thousands of businesses already transforming their operations with our AI-powered automation solutions.
               </p>
-              <button className="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
+              <a
+                href="#automation-form"
+                className="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors inline-block"
+              >
                 Get Started Today
-              </button>
+              </a>
             </div>
           </div>
         </div>

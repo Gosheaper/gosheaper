@@ -77,7 +77,7 @@ export default function AutomationForm() {
   ];
 
   return (
-    <section className="relative bg-gradient-to-br from-gray-50 via-white to-blue-50">
+    <section id="automation-form" className="relative bg-gradient-to-br from-gray-50 via-white to-blue-50">
       <div className="mx-auto max-w-4xl px-4 sm:px-6 py-16 md:py-24">
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
