@@ -1,0 +1,225 @@
+# robots.txt for GoSheaper Automation Hub
+# https://gosheaper.com/robots.txt
+
+# Allow all search engines to crawl the site
+User-agent: *
+Allow: /
+
+# Specific rules for major search engines
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Slurp
+Allow: /
+Crawl-delay: 2
+
+User-agent: DuckDuckBot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Baiduspider
+Allow: /
+Crawl-delay: 2
+
+User-agent: YandexBot
+Allow: /
+Crawl-delay: 2
+
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+User-agent: TwitterBot
+Allow: /
+
+# Block access to administrative and sensitive areas
+Disallow: /admin/
+Disallow: /login/
+Disallow: /dashboard/
+Disallow: /private/
+Disallow: /backend/
+Disallow: /wp-admin/
+Disallow: /wp-login.php
+Disallow: /wp-config.php
+Disallow: /database/
+Disallow: /config/
+Disallow: /includes/
+Disallow: /scripts/
+Disallow: /temp/
+Disallow: /tmp/
+Disallow: /cache/
+Disallow: /logs/
+
+# Block development and testing areas
+Disallow: /dev/
+Disallow: /test/
+Disallow: /staging/
+Disallow: /beta/
+Disallow: /alpha/
+Disallow: /sandbox/
+
+# Block duplicate content and session parameters
+Disallow: /*?sessionid=
+Disallow: /*?sid=
+Disallow: /*?utm_*
+Disallow: /*?ref=
+Disallow: /*?source=
+Disallow: /*?campaign=
+Disallow: /*?gclid=
+Disallow: /*?fbclid=
+Disallow: /*?print=
+Disallow: /*?format=pdf
+
+# Block search result pages to prevent duplicate content
+Disallow: /search/
+Disallow: /*?search=
+Disallow: /*?query=
+Disallow: /*?q=
+
+# Block form submission endpoints
+Disallow: /submit/
+Disallow: /form-handler/
+Disallow: /contact-submit/
+
+# Block API endpoints
+Disallow: /api/
+Disallow: /v1/
+Disallow: /v2/
+Disallow: /rest/
+Disallow: /graphql/
+Disallow: /webhook/
+
+# Block file directories
+Disallow: /files/private/
+Disallow: /downloads/restricted/
+Disallow: /uploads/temp/
+
+# Block email and contact form thank you pages from indexing
+Disallow: /thank-you/
+Disallow: /form-success/
+Disallow: /message-sent/
+
+# Allow important SEO files and directories
+Allow: /sitemap.xml
+Allow: /sitemap*.xml
+Allow: /robots.txt
+Allow: /llms.txt
+Allow: /favicon.ico
+Allow: /apple-touch-icon*.png
+Allow: /manifest.json
+Allow: /.well-known/
+
+# Allow CSS, JS, and media files for better rendering
+Allow: /css/
+Allow: /js/
+Allow: /images/
+Allow: /media/
+Allow: /assets/
+Allow: /static/
+Allow: /fonts/
+Allow: /*.css
+Allow: /*.js
+Allow: /*.png
+Allow: /*.jpg
+Allow: /*.jpeg
+Allow: /*.gif
+Allow: /*.svg
+Allow: /*.webp
+Allow: /*.ico
+Allow: /*.woff
+Allow: /*.woff2
+Allow: /*.ttf
+Allow: /*.eot
+
+# Block specific file types that shouldn't be indexed
+Disallow: /*.pdf$
+Disallow: /*.doc$
+Disallow: /*.docx$
+Disallow: /*.xls$
+Disallow: /*.xlsx$
+Disallow: /*.ppt$
+Disallow: /*.pptx$
+Disallow: /*.zip$
+Disallow: /*.rar$
+Disallow: /*.tar$
+Disallow: /*.gz$
+Disallow: /*.sql$
+Disallow: /*.bak$
+Disallow: /*.log$
+
+# Block aggressive crawlers and scrapers
+User-agent: AhrefsBot
+Crawl-delay: 10
+
+User-agent: MJ12bot
+Crawl-delay: 10
+
+User-agent: DotBot
+Disallow: /
+
+User-agent: SemrushBot
+Crawl-delay: 5
+
+User-agent: MajesticSEO
+Crawl-delay: 10
+
+User-agent: spbot
+Disallow: /
+
+User-agent: BLEXBot
+Crawl-delay: 10
+
+# Block problematic bots
+User-agent: CCBot
+Disallow: /
+
+User-agent: ChatGPT-User
+Disallow: /
+
+User-agent: GPTBot
+Disallow: /
+
+User-agent: AI2Bot
+Disallow: /
+
+User-agent: Claude-Web
+Allow: /
+
+# Sitemaps location
+Sitemap: https://gosheaper.com/sitemap.xml
+Sitemap: https://gosheaper.com/sitemap-index.xml
+Sitemap: https://gosheaper.com/news-sitemap.xml
+
+# Host directive for preferred domain
+Host: https://gosheaper.com
+
+# Additional crawl delay for resource-intensive pages
+User-agent: *
+Crawl-delay: 1
+
+# Allow news aggregators for content distribution
+User-agent: Googlebot-News
+Allow: /news/
+Allow: /blog/
+Allow: /press/
+Allow: /announcements/
+
+# Allow image indexing for automation equipment and solutions
+User-agent: Googlebot-Image
+Allow: /images/
+Allow: /gallery/
+Allow: /portfolio/
+Allow: /case-studies/
+
+# Allow video indexing for automation demonstrations
+User-agent: Googlebot-Video
+Allow: /videos/
+Allow: /demos/
+Allow: /webinars/
