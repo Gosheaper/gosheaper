@@ -23,9 +23,9 @@ export default function RootLayout({
     <html lang="en" className="scroll-smooth">
       <Head>
         <script
-          src="https://analytics.gosheaper.cloud/api/script.js"
-          data-site-id="1"
           defer
+          src="https://analytics.gosheaper.cloud/script.js"
+          data-website-id="d638c9d0-c429-491d-9c01-498d51d81426"
         ></script>
       </Head>
       <body
